@@ -5,6 +5,19 @@ var colordisplay = document.getElementById("colordisplay");
 var head = document.getElementById("head");
 colordisplay.textContent = pickedcolor;
 var message = document.querySelector("#message");
+var reset = document.querySelector("#reset");
+reset.addEventListener("click",function()
+                      {
+    colors = generaterandomcolor(6);
+    pickedcolor = colors[ran()];
+    colordisplay.textContent = pickedcolor;
+    for(var i=0;i<squares.length;i++)
+    {
+        squares[i].style.background = colors[i];
+    }
+    head.style.background = "aqua";
+    
+})
 for(var i=0;i<squares.length;i++)
     {
         squares[i].style.background = colors[i];
@@ -16,12 +29,14 @@ for(var i=0;i<squares.length;i++)
                 message.textContent = "correct!!";
                 changecolor(pickedcolor);
                 head.style.background = pickedcolor;
+            reset.textContent = "play again?";
                 
         }
             else
                 {
                 this.style.background = "#232323";
                     message.textContent = "incorrect!!";
+                    
                 }
                                     });
     }

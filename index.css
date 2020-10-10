@@ -18,7 +18,11 @@ body
     margin:1.6667%;
     border-radius: 5%;
 }
-span
+
+#stripe
 {
-    color:aliceblue;
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black;
 }
